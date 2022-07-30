@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/States_and_buttons_and_EditTexts.iml" filepath="$PROJECT_DIR$/.idea/modules/States_and_buttons_and_EditTexts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/States_and_buttons_and_EditTexts.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
