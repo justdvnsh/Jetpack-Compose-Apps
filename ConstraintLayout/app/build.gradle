@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "divyansh.tech.motionlayout"
+        applicationId "divyansh.tech.constraintlayout"
         minSdk 21
         targetSdk 32
         versionCode 1
