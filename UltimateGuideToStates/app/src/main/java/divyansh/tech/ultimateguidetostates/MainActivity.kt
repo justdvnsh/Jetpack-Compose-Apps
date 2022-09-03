@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -24,14 +25,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             rememberScaffoldState()
-            var counter by rememberSaveable {
-                mutableStateOf(0)
-            }
+            val viewmodel by viewModels<MainViewModel>()
             Column(
                 modifier = Modifier.padding(20.dp)
             ) {
                 Text(
-                    text = counter.toString(),
+                    text = viewmodel.counter.toString(),
                     modifier = Modifier.fillMaxWidth(),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.ExtraBold
@@ -43,15 +42,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Button(onClick = {
-                        counter += 1
-                    }) {
+                    Button(onClick = { viewmodel.increment() }) {
                         Text(text = "Increment Counter")
                     }
 
-                    Button(onClick = {
-                        counter -= 1
-                    }) {
+                    Button(onClick = { viewmodel.decrement() }) {
                         Text(text = "Decrement Counter")
                     }
                 }
