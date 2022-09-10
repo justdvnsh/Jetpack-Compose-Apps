@@ -1,4 +1,4 @@
-package divyansh.tech.netflixclone.ui.theme
+package divyansh.tech.netflixclone.app.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

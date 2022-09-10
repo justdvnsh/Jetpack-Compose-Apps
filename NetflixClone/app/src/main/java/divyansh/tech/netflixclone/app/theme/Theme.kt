@@ -1,4 +1,4 @@
-package divyansh.tech.netflixclone.ui.theme
+package divyansh.tech.netflixclone.app.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
