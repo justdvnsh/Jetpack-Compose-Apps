@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
             var progressValue by remember {
                 mutableStateOf(0f)
             }
+
             val animatedProgress by animateFloatAsState(
                 targetValue = progressValue,
                 animationSpec = keyframes {
@@ -39,6 +40,7 @@ class MainActivity : ComponentActivity() {
                     0.5f at 500
                 }
             )
+
             val constraintSetStart = ConstraintSet {
                 val videoView = createRefFor("videoView")
                 val titleTv = createRefFor("titleTv")
@@ -85,6 +87,7 @@ class MainActivity : ComponentActivity() {
                     width = Dimension.fillToConstraints
                 }
             }
+
             Box(modifier = Modifier.fillMaxSize()) {
                 MotionLayout(
                     start = constraintSetStart,

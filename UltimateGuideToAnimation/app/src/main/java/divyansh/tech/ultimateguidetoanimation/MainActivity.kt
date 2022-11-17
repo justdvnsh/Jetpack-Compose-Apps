@@ -21,11 +21,57 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import divyansh.tech.ultimateguidetoanimation.ui.theme.UltimateGuideToAnimationTheme
 
+enum class STATE {COLLAPSED, EXPANDED}
+
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterialApi::class, ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            var isLoading by remember {
+                mutableStateOf(false)
+            }
 
+            val infiniteTransition = rememberInfiniteTransition()
+            val color by infiniteTransition.animateColor(
+                initialValue = Color.LightGray,
+                targetValue = Color.Gray,
+                animationSpec = infiniteRepeatable(
+                    animation = keyframes {
+                        durationMillis = 1000
+                        Color.Red at 500
+                    },
+                    repeatMode = RepeatMode.Reverse
+                )
+            )
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(20.dp),
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.Start
+            ) {
+                if (!isLoading) Text(
+                    text = "Here is something",
+                    fontSize = 18.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.Start)
+                )
+                else Box(
+                    modifier = Modifier
+                        .height(40.dp)
+                        .background(color)
+                        .fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.padding(horizontal = 10.dp))
+                Button(onClick = {
+                    isLoading = !isLoading
+                }) {
+                    Text(text = if (isLoading) "Stop Refresh" else "Refresh")
+                }
+            }
         }
     }
 }

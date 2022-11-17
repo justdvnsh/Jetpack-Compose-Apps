@@ -24,7 +24,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            rememberScaffoldState()
             val viewmodel by viewModels<MainViewModel>()
             Column(
                 modifier = Modifier.padding(20.dp)

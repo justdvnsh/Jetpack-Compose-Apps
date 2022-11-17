@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester.Companion.createRefs
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -89,6 +90,7 @@ fun ListItem(
                     val dogIv = createRefFor("dogIv")
                     val nameTv = createRefFor("nameTv")
                     val dateTv = createRefFor("dateTv")
+
                     val bottomGuideline = createGuidelineFromBottom(0.4f)
 
                     val favorite = createRefFor("fav")
@@ -140,16 +142,8 @@ fun ListItem(
                     val format = SimpleDateFormat("dd-MM-yyyy")
                     val time = format.format(Date().time)
 
-                    Image(
-                        painter = painter,
-                        contentDescription = "",
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .clip(CircleShape)
-                            .border(1.dp, Color.Black, CircleShape)
-                            .layoutId("dogIv")
-
-                    )
+                    Image(painter = painter, contentDescription = "", modifier = Modifier.clip(
+                        RoundedCornerShape(50.dp)).layoutId("dogIv"))
 
                     Text(
                         text = "Here is Something",

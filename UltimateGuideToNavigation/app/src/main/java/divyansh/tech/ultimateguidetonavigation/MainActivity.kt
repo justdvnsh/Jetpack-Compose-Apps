@@ -17,14 +17,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import divyansh.tech.ultimateguidetonavigation.Screens.Favorites.FavoriteScreen
-import divyansh.tech.ultimateguidetonavigation.Screens.Home.HomeScreen
-import divyansh.tech.ultimateguidetonavigation.Screens.Home.Navigation.HomeScreenItems
-import divyansh.tech.ultimateguidetonavigation.Screens.Home.Navigation.homeNavGraph
-import divyansh.tech.ultimateguidetonavigation.Screens.Home.Navigation.settingsNavGraph
-import divyansh.tech.ultimateguidetonavigation.Screens.Settings.SettingsScreen
 import divyansh.tech.ultimateguidetonavigation.Utils.BottomBar
 import divyansh.tech.ultimateguidetonavigation.Utils.BottomNavItems
+import divyansh.tech.ultimateguidetonavigation.favorites.FavoritesScreen
+import divyansh.tech.ultimateguidetonavigation.home.HomeScreen
+import divyansh.tech.ultimateguidetonavigation.home.navigation.HomeScreenItems
+import divyansh.tech.ultimateguidetonavigation.home.navigation.homeNavGraph
+import divyansh.tech.ultimateguidetonavigation.settings.SettingsScreen
+import divyansh.tech.ultimateguidetonavigation.settings.navigation.settingsNavGraph
 import divyansh.tech.ultimateguidetonavigation.ui.theme.UltimateGuideToNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -48,7 +48,7 @@ fun NavigationComponent(
     NavHost(navController = navController, startDestination = HomeScreenItems.HOME_NAV_GRAPH) {
         homeNavGraph(navController)
         composable(BottomNavItems.FAVORITES) {
-            FavoriteScreen()
+            FavoritesScreen()
         }
         settingsNavGraph(navController)
     }
